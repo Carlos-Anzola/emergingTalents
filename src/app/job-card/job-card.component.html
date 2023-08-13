@@ -1,0 +1,72 @@
+<body>
+    <div class="bigGridBox">
+        <div class="companyBox">
+            <img src="https://firebasestorage.googleapis.com/v0/b/emergingtalents-1f5a2.appspot.com/o/McDonald_s_SVG_logo.svg-removebg-preview.png?alt=media&token=7730393f-5426-475b-b5bb-6573a60e1fcc" alt="">
+        </div>
+        <div class="detailBox">
+            <h2 class="jobTitle">
+                Freidor de papas profesional
+            </h2>
+            <div class="companyName">
+                <p>McDonalds's</p>
+            </div>
+            <div class="modalityType">
+                <p>Modalidad: presencial</p>
+            </div>
+            <div class="descriptionJob">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, ducimus unde. Aliquam expedita exercitationem optio quisquam beatae architecto, quibusdam dolorem animi alias consectetur ducimus aliquid doloremque ex vitae. Dolorem, quam!</p>
+            </div>
+        </div>
+        <div class="tagBox">
+            <div class="iconBox">
+                <i (click)="changeicon()" [ngClass]="visible?'fa-regular fa-bookmark':'fa-solid fa-bookmark'"></i>
+            </div>
+            <div class="buttonBox">
+                <button class="button" (click)="handleOpenModal(MODAL_ID)">Detalles</button>
+            </div>
+        </div>
+    </div>
+    <ngx-smart-modal 
+        [identifier]="MODAL_ID"
+        class="modalStyle"
+        [closable]="false"
+        [backdrop]="true"
+        [refocus]="false"
+        customClass="nsm-centered"
+        (onAnyCloseEventFinished)="handleCloseModal(MODAL_ID)"
+        [dismissable]="true"
+        [escapable]="true">
+        <div class="gridBox">
+            <div class="iconBox">
+                <div (click)="handleCloseModal(MODAL_ID)">
+                    <i class="fa-solid fa-x padding"></i>
+                </div>
+            </div>
+            <div class="modalFirstBox">
+                <div class="companyBox">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/emergingtalents-1f5a2.appspot.com/o/McDonald_s_SVG_logo.svg-removebg-preview.png?alt=media&token=7730393f-5426-475b-b5bb-6573a60e1fcc" alt="">
+                </div>
+                <div class="infoBox">
+                    <div class="nameBox">
+                        <h1 class="margin"> *Nombre de la empresa* solicitando:</h1>
+                    </div>
+                    <div class="jobType">
+                        <p class="margin"><strong>Freidor de papas fritas profesional</strong></p>
+                        <p class="margin"><strong>Modalidad: presencial</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modalSecondBox">
+                <p class="margin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quod eum voluptates ullam vero quia quisquam laboriosam. Exercitationem harum perferendis, dolor odio vitae pariatur dolorum, repellendus, nulla neque eligendi voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dicta eum in ipsum magnam, iure fugiat nisi impedit voluptates eveniet. Nisi cum consequatur quod tempora, repudiandae magnam assumenda exercitationem tenetur? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id illo et minus fugit quaerat quod ipsa veniam nostrum eaque harum saepe architecto incidunt sapiente quae sint, temporibus, vel, rem distinctio!</p>
+            </div>
+            <div class="modalThirdBox">
+                <div>
+                    <p><strong>Sueldo: 5$/h</strong></p>
+                </div>
+                <div>
+                    <button type="button" class="button">Aplicar</button>
+                </div>
+            </div>
+        </div>
+    </ngx-smart-modal>
+</body>

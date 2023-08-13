@@ -1,0 +1,25 @@
+@import "../node_modules/ngx-smart-modal/styles/ngx-smart-modal.scss";
+
+/* NgxSmartModal styling */
+.nsm-dialog {
+    max-width: 700px !important;
+}
+
+.modal-max-1200 {
+    .nsm-dialog {
+        max-width: 1200px;
+    }
+}
+
+.nsm-content {
+    width: 100%;
+    border-radius: 7px;
+}
+.overlay.nsm-overlay-open{
+    background: rgba(0, 0, 0, 0.40);
+    backdrop-filter: blur(1px);
+}
+
+*{
+    margin: 0;
+}
