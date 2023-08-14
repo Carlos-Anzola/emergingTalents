@@ -4,18 +4,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JobCardComponent } from './job-card/job-card.component';
 import { NgxSmartModalModule, NgxSmartModalService } from 'ngx-smart-modal';
+import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    JobCardComponent
+    JobCardComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxSmartModalModule.forChild()
+    NgxSmartModalModule.forChild(),
+    CarouselModule,
+    BrowserAnimationsModule
   ],
-  exports:[NgxSmartModalModule],
+  exports:[NgxSmartModalModule, JobCardComponent, CarouselComponent],
   providers: [NgxSmartModalService],
   bootstrap: [AppComponent]
 })

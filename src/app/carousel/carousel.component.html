@@ -1,0 +1,13 @@
+<div class="container">
+    <a (click)="owlCar.prev()">Prev</a>
+        <div class="wrapper">
+        <owl-carousel-o [options]="customOptions" #owlCar>
+            <ng-container *ngFor="let offer of offerList">
+                <ng-container *owlCarouselItem>
+                    <app-job-card [offer]="offerList"></app-job-card>
+                </ng-container>
+            </ng-container>
+        </owl-carousel-o>
+        </div>
+    <a (click)="owlCar.next()">Next</a>
+</div>

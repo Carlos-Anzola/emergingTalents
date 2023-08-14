@@ -1,20 +1,18 @@
 <body>
-    <div class="bigGridBox">
+    <div *ngFor="let offer of offer" class="bigGridBox">
         <div class="companyBox">
-            <img src="https://firebasestorage.googleapis.com/v0/b/emergingtalents-1f5a2.appspot.com/o/McDonald_s_SVG_logo.svg-removebg-preview.png?alt=media&token=7730393f-5426-475b-b5bb-6573a60e1fcc" alt="">
+            <img [src]="offer.imageURL" alt="">
         </div>
         <div class="detailBox">
-            <h2 class="jobTitle">
-                Freidor de papas profesional
-            </h2>
+            <h2 class="jobTitle">{{offer.title}}</h2>
             <div class="companyName">
-                <p>McDonalds's</p>
+                <p>{{offer.name}}</p>
             </div>
             <div class="modalityType">
-                <p>Modalidad: presencial</p>
+                <p>Modalidad: {{offer.modality ? 'Presencial' : 'Virtual'}}</p>
             </div>
             <div class="descriptionJob">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, ducimus unde. Aliquam expedita exercitationem optio quisquam beatae architecto, quibusdam dolorem animi alias consectetur ducimus aliquid doloremque ex vitae. Dolorem, quam!</p>
+                <p>{{offer.description}}</p>
             </div>
         </div>
         <div class="tagBox">
@@ -35,7 +33,8 @@
         customClass="nsm-centered"
         (onAnyCloseEventFinished)="handleCloseModal(MODAL_ID)"
         [dismissable]="true"
-        [escapable]="true">
+        [escapable]="true"
+        *ngFor="let offer of offer">
         <div class="gridBox">
             <div class="iconBox">
                 <div (click)="handleCloseModal(MODAL_ID)">
@@ -44,24 +43,24 @@
             </div>
             <div class="modalFirstBox">
                 <div class="companyBox">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/emergingtalents-1f5a2.appspot.com/o/McDonald_s_SVG_logo.svg-removebg-preview.png?alt=media&token=7730393f-5426-475b-b5bb-6573a60e1fcc" alt="">
+                    <img [src]="offer.imageURL" alt="">
                 </div>
                 <div class="infoBox">
                     <div class="nameBox">
-                        <h1 class="margin"> *Nombre de la empresa* solicitando:</h1>
+                        <h1 class="margin"> {{offer.name}} solicitando:</h1>
                     </div>
                     <div class="jobType">
-                        <p class="margin"><strong>Freidor de papas fritas profesional</strong></p>
-                        <p class="margin"><strong>Modalidad: presencial</strong></p>
+                        <p class="margin"><strong>{{offer.title}}</strong></p>
+                        <p class="margin"><strong>Modalidad: {{offer.modality ? 'Presencial' : 'Virtual'}}</strong></p>
                     </div>
                 </div>
             </div>
             <div class="modalSecondBox">
-                <p class="margin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quod eum voluptates ullam vero quia quisquam laboriosam. Exercitationem harum perferendis, dolor odio vitae pariatur dolorum, repellendus, nulla neque eligendi voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dicta eum in ipsum magnam, iure fugiat nisi impedit voluptates eveniet. Nisi cum consequatur quod tempora, repudiandae magnam assumenda exercitationem tenetur? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id illo et minus fugit quaerat quod ipsa veniam nostrum eaque harum saepe architecto incidunt sapiente quae sint, temporibus, vel, rem distinctio!</p>
+                <p class="margin">{{offer.description}}</p>
             </div>
             <div class="modalThirdBox">
                 <div>
-                    <p><strong>Sueldo: 5$/h</strong></p>
+                    <p><strong>Sueldo: {{offer.salary}}$/h</strong></p>
                 </div>
                 <div>
                     <button type="button" class="button">Aplicar</button>

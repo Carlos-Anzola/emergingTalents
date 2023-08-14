@@ -1,16 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgxSmartModalService } from 'ngx-smart-modal';
 import { Offer } from '../models/offer';
 
 
 @Component({
-  selector: 'app-job-card',
-  templateUrl: './job-card.component.html',
-  styleUrls: ['./job-card.component.scss']
+  selector: 'app-carousel',
+  templateUrl: './carousel.component.html',
+  styleUrls: ['./carousel.component.scss']
 })
-export class JobCardComponent implements OnInit {
-  // modality: boolean = true;
-  @Input() offer: Offer[] = [
+export class CarouselComponent implements OnInit {
+    offerList: Offer[] = [
     {
       name: "McDonald's",
       categories: ["1234", "5678"],
@@ -24,22 +22,27 @@ export class JobCardComponent implements OnInit {
       modality: true
     },
   ]
-  
-  constructor(public ngxSmartModalService: NgxSmartModalService) {}
-  
-  visible: boolean = true;
-  MODAL_ID = "MODAL_ID";
-  
-  changeicon(){
-    this.visible = !this.visible
-  }
+  constructor() { }
+  customOptions: any = {
+    loop: true,
+    autoplay: false,
+    center: true,
+    dots: false,
+    autoHeight: false,
+    autoWidth: false,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      950: {
+        items: 3,
+      },
+    },
+  };
   ngOnInit(): void {
+  }
 
-  }
-  handleOpenModal(modalId: string){
-    this.ngxSmartModalService.open(modalId);
-  }
-  handleCloseModal(modalId: string) {
-    this.ngxSmartModalService.close(modalId);
-  }
 }
