@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JobCardComponent } from './job-card/job-card.component';
-import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselComponent } from './modules/carousel/carousel.component';
 
 const routes: Routes = [
   {
-    path: 'card',
-    component: JobCardComponent
+    path: '',
+    redirectTo: 'carousel',
+    pathMatch: 'full'
   },
   {
     path: 'carousel',

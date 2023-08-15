@@ -1,0 +1,63 @@
+<div class="mainCardEmp">
+  <div class="bigGridBox">
+    <div class="companyBox">
+      <img [src]="offer.imageURL" alt="">
+    </div>
+    <div class="detailBox">
+      <h2 class="jobTitle">{{offer.title}}</h2>
+      <div class="companyName">
+        <p>{{offer.name}}</p>
+      </div>
+      <div class="modalityType">
+        <p>Modalidad: {{offer.modality ? 'Presencial' : 'Virtual'}}</p>
+      </div>
+      <div class="descriptionJob">
+        <p>{{offer.description}}</p>
+      </div>
+    </div>
+    <div class="tagBox">
+      <div class="iconBox">
+        <i (click)="changeicon()" [ngClass]="visible ? 'fa-regular fa-bookmark' : 'fa-solid fa-bookmark'"></i>
+      </div>
+      <div class="buttonBox">
+        <button class="button" (click)="handleOpenModal(MODAL_ID)">Detalles</button>
+      </div>
+    </div>
+  </div>
+  <ngx-smart-modal [identifier]="MODAL_ID" class="modalStyle" [closable]="false" [backdrop]="true" [refocus]="false"
+    customClass="nsm-centered" (onAnyCloseEventFinished)="handleCloseModal(MODAL_ID)" [dismissable]="true"
+    [escapable]="true">
+    <div class="gridBox">
+      <div class="iconBox">
+        <div (click)="handleCloseModal(MODAL_ID)">
+          <i class="fa-solid fa-x padding"></i>
+        </div>
+      </div>
+      <div class="modalFirstBox">
+        <div class="companyBox">
+          <img [src]="offer.imageURL" alt="">
+        </div>
+        <div class="infoBox">
+          <div class="nameBox">
+            <h1 class="margin"> {{offer.name}} solicitando:</h1>
+          </div>
+          <div class="jobType">
+            <p class="margin"><strong>{{offer.title}}</strong></p>
+            <p class="margin"><strong>Modalidad: {{offer.modality ? 'Presencial' : 'Virtual'}}</strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="modalSecondBox">
+        <p class="margin">{{offer.description}}</p>
+      </div>
+      <div class="modalThirdBox">
+        <div>
+          <p><strong>Sueldo: {{offer.salary}}$/h</strong></p>
+        </div>
+        <div>
+          <button type="button" class="button">Aplicar</button>
+        </div>
+      </div>
+    </div>
+  </ngx-smart-modal>
+</div>
