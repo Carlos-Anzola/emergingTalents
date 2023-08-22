@@ -8,7 +8,7 @@ export interface OfferCreate{
   imageURL: string;
   isDisabled: boolean;
   description: string;
-  id: number;
+  id: string;
   modality: boolean;
 }
 export interface Offer extends OfferCreate{

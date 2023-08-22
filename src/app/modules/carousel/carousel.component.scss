@@ -1,74 +1,123 @@
-a {
-    width: 40px;
-    cursor: pointer;
-    margin: 0 20px;
-    padding: 0 10px;
-  }
-  .item {
-    background: white;
-    border-radius: 4px;
-    margin: 5px 10px;
-    padding: 5px 10px;
+.componentContainer{
+  display: grid;
+  justify-items: center;
+  .bigBox{
     display: grid;
-    grid-template-areas:
-      'a b'
-      'a b'
-      'a c';
-  }
-  .item-image {
-    grid-area: a;
-    align-self: center;
-  }
-  .item-name {
-    grid-area: b;
-    justify-self: left;
-    align-self: center;
-    margin-left: 10px;
-  }
-  .item-price {
-    grid-area: c;
-    justify-self: left;
-    align-self: center;
-    margin-left: 10px;
-  }
-  .container {
-    background: rgb(197, 196, 196);
-    display: flex;
-    align-items: center;
-  }
-  .wrapper {
-    width: calc(100% - 250px);
-    flex-grow: 1;
-  }
-  owl-carousel-o {
-    width: 100%;
-  }
-  
-  @media screen and (max-width: 800px) {
-    .item {
+    justify-items: center;
+    width: fit-content;
+    .titleBox{
+      color: #890095;
+      text-align: center;
+      font-family: Koulen;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-top: 7px;
+    }
+    .gridBox{
       display: grid;
-      grid-template-areas:
-        'a a'
-        'b b'
-        'c c';
+      grid-template-columns: 1fr 0.20fr;
+      grid-template-rows: 1fr;
+      justify-items: center;
+      align-items: center;
+      justify-content: center;
+      .viewBox{
+        display: flex;
+        height: 650px;
+        overflow: hidden;
+        margin-left: 15px;
+        .carouselBox{
+          overflow-y: auto;
+          max-height: 100%;
+        }
+        .carouselBox::-webkit-scrollbar{
+          -webkit-appearance: none;
+        }
     }
-  
-    .item-image {
-      width: 80px;
-      justify-self: center;
-      margin-bottom: 10px;
+    .arrowGridBox{
+      height: 100%;
+      width: 100%;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      .arrowIcon{
+        cursor: pointer;
+      }
     }
-  
-    .item-name {
-      margin-bottom: 10px;
-      margin-left: 0;
-      justify-self: auto;
-      text-align: center;
-    }
-    .item-price {
-      margin-left: 0;
-      text-align: center;
-      justify-self: auto;
     }
   }
-  
+}
+.gridBox {
+  display: grid;
+
+  .iconBox {
+    display: grid;
+    justify-content: end;
+    cursor: pointer;
+
+    .padding {
+      padding-bottom: 5px;
+    }
+  }
+
+  .modalFirstBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .companyBox {
+      display: grid;
+      height: 180px;
+      width: 100%;
+      justify-items: center;
+      align-items: center;
+
+      img {
+        width: 55%;
+      }
+    }
+
+    .infoBox {
+      display: grid;
+      align-items: center;
+
+      .nameBox {
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .jobType {
+        font-size: 17px;
+        text-align: center;
+
+        .margin {
+          margin: 27px;
+        }
+      }
+    }
+  }
+
+  .modalSecondBox {
+    padding: 17px;
+    text-align: justify;
+  }
+
+  .modalThirdBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+
+    .button {
+      width: 135px;
+      margin: auto;
+      font-size: 14px;
+      padding: 5px;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      background: #61398F;
+      box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+}

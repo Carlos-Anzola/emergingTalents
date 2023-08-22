@@ -1,7 +1,8 @@
-.mainCardEmp {
-  width: 100vw;
-  height: 100vh;
-
+.mainCardEmp{
+  display: grid;
+  margin: 10px 0px;
+  padding: 10px 0px;
+}
   .bigGridBox {
     border-radius: 10px;
     border: 2px solid #61398F;
@@ -59,77 +60,3 @@
       }
     }
   }
-}
-
-.gridBox {
-  display: grid;
-
-  .iconBox {
-    display: grid;
-    justify-content: end;
-
-    .padding {
-      padding-bottom: 5px;
-    }
-  }
-
-  .modalFirstBox {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    .companyBox {
-      display: grid;
-      height: 180px;
-      width: 100%;
-      justify-items: center;
-      align-items: center;
-
-      img {
-        width: 55%;
-      }
-    }
-
-    .infoBox {
-      display: grid;
-      align-items: center;
-
-      .nameBox {
-        font-size: 14px;
-        text-align: center;
-      }
-
-      .jobType {
-        font-size: 17px;
-        text-align: center;
-
-        .margin {
-          margin: 27px;
-        }
-      }
-    }
-  }
-
-  .modalSecondBox {
-    padding: 17px;
-    text-align: justify;
-  }
-
-  .modalThirdBox {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    align-items: center;
-
-    .button {
-      width: 135px;
-      margin: auto;
-      font-size: 14px;
-      padding: 5px;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      background: #61398F;
-      box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25);
-    }
-  }
-}

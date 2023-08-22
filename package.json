@@ -19,7 +19,6 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "@fortawesome/fontawesome-free": "^6.4.2",
-    "ngx-owl-carousel-o": "^14.0.1",
     "ngx-smart-modal": "^14.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 import { Offer } from 'src/app/core/models/offer';
 
@@ -10,18 +10,21 @@ import { Offer } from 'src/app/core/models/offer';
 
 export class EmploymentCardsComponent {
   @Input() offer!: Offer
-  visible: boolean = true;
-  MODAL_ID = "MODAL_ID";
+  
+  @Output() handleOfferEmitter = new EventEmitter <string>();
 
-  constructor(public ngxSmartModalService: NgxSmartModalService) { }
+  visible: boolean = true;
+
+  constructor() { }
 
   changeicon() {
     this.visible = !this.visible
   }
   handleOpenModal(modalId: string) {
-    this.ngxSmartModalService.open(modalId);
+    // this.ngxSmartModalService.open(modalId);
+    this.handleOfferEmitter.emit(modalId)
   }
   handleCloseModal(modalId: string) {
-    this.ngxSmartModalService.close(modalId);
+    // this.ngxSmartModalService.close(modalId);
   }
 }
